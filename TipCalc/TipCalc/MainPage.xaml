@@ -4,8 +4,15 @@
              xmlns:local="clr-namespace:TipCalc"
              x:Class="TipCalc.MainPage">
 
-	<Label Text="Welcome to Xamarin.Forms!" 
-           VerticalOptions="Center" 
-           HorizontalOptions="Center" />
+    <ContentPage.Content>
+        <StackLayout>
+            <Label Text="Enter In Total Bill Before Tip"/>
+            <Entry x:Name="billAmount" Text="20.00" />  <!-- Bind to TipCalc -->
+            <Label Text="Enter In Total Tip Amount"/>
+            <Entry x:Name="tipAmount" Text="5.00"/> <!-- Bind to TipCalc-->
+            <Button x:Name="translateButon" Text="Click Button To Fire Command!" Command="{Binding TipCommand}"/>  <!-- Run TipCalc-->
+            <Label Text="{Binding GetPercentage, Mode=OneWay}"/>
+        </StackLayout>
+    </ContentPage.Content>
 
 </ContentPage>
