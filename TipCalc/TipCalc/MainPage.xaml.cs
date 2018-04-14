@@ -1,4 +1,5 @@
-﻿using Xamarin.Forms;
+﻿using System;
+using Xamarin.Forms;
 
 namespace TipCalc
 {
@@ -12,14 +13,18 @@ namespace TipCalc
             BindingContext = vm;
         }
 
-        //public async string BtnLogin_OnClicked(float BillEntry, float TipEntry)
-        //{
-        //    // Make sure they filled all the fields.
-        //    if (float.IsNaN(BillEntry) || float.IsNaN(TipEntry))
-        //    {
-        //        await DisplayAlert("Whoops", "Please enter a number.", "Sounds good");
-        //        return (TipConfig);
-        //    }
-        //}
+        public void CalculateTip(object sender, EventArgs e)
+        {
+            float BillValue = float.Parse(BillEntry.Text);
+            float TipValue = float.Parse(TipEntry.Text);
+
+            float TipPercentage = vm.TipCalculate(BillValue, TipValue);
+
+            if (!float.IsNaN(TipPercentage))
+            {
+                finalPercentage.IsEnabled = true;
+                finalPercentage.Text = "Your Table Tipped You %" + Math.Round(TipPercentage, 4);
+            }
+        }
     }
 }
