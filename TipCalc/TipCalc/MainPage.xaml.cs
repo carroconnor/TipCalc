@@ -13,25 +13,38 @@ namespace TipCalc
             BindingContext = vm;
         }
 
+
+
         public void CalculateTip(object sender, EventArgs e)
         {
-            try
+            var BillIsNumber = float.TryParse(BillEntry.Text, out _);
+            var TipIsNumber = float.TryParse(TipEntry.Text, out _);
+
+            if (BillIsNumber && TipIsNumber)
             {
-                float BillValue = float.Parse(BillEntry.Text);
-                float TipValue = float.Parse(TipEntry.Text);
+                var BillValue = float.Parse(BillEntry.Text);
+                var TipValue = float.Parse(TipEntry.Text);
 
-                float TipPercentage = vm.TipCalculate(BillValue, TipValue);
-
-                if (!float.IsNaN(TipPercentage))
+                if (BillValue < 0 || TipValue < 0)
                 {
-                    finalPercentage.IsEnabled = true;
-                    finalPercentage.Text = "Your Table Tipped You %" + Math.Round(TipPercentage, 4);
+                    finalPercentage.Text = "Please Enter In A Positive Number";
+                }
+
+                else
+                {
+                    var TipPercentage = vm.TipCalculate(BillValue, TipValue);
+
+                    if (!float.IsNaN(TipPercentage))
+                    {
+                        finalPercentage.IsEnabled = true;
+                        finalPercentage.Text = "Your Table Tipped You %" + Math.Round(TipPercentage, 4);
+                    }
                 }
             }
-            catch (FormatException)
+
+            else
             {
-                finalPercentage.IsEnabled = true;
-                finalPercentage.Text = "Please type in a number";
+                finalPercentage.Text = "Enter in a number";
             }
 
         }
