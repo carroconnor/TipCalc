@@ -13,8 +13,6 @@ namespace TipCalc
             BindingContext = vm;
         }
 
-
-
         public void CalculateTip(object sender, EventArgs e)
         {
             var BillIsNumber = float.TryParse(BillEntry.Text, out _);
@@ -46,7 +44,6 @@ namespace TipCalc
             {
                 finalPercentage.Text = "Enter in a number";
             }
-
         }
     }
 }
