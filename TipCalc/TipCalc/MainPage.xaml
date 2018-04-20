@@ -16,7 +16,9 @@
                 <RowDefinition Height="40"/>
                 <RowDefinition Height="40"/>
                 <RowDefinition Height="40"/>
+                <RowDefinition Height="80"/>
                 <RowDefinition Height="40"/>
+                <RowDefinition Height="80"/>
             </Grid.RowDefinitions>
             <Label Grid.Column="0" Grid.ColumnSpan="2" Text="Tip Caluculator" HorizontalOptions="Center"/>
             <Label Grid.Row="1" Grid.Column="0" Grid.ColumnSpan="2" Text="Easily Find Out What % Your Tables Are Tipping" HorizontalOptions="CenterAndExpand"/>
@@ -24,8 +26,8 @@
             <Entry Grid.Row="2" Grid.Column="1" x:Name="BillEntry" Text="100" />
             <Label Grid.Row="3" Text="How Much Did They Tip?"/>
             <Entry Grid.Row="3" Grid.Column="1" x:Name="TipEntry" Text="15.00"/>
-            <Button Grid.Row="4" Grid.Column="0" Grid.ColumnSpan="2" x:Name="translateButon" Text="Configure!" Clicked="CalculateTip"/>
-            <Button Grid.Row="5" Grid.Column="0" Grid.ColumnSpan="2" x:Name="finalPercentage" Text="Tip Will Appear Here" IsEnabled="False"/>
+            <Button Grid.Row="5" Grid.Column="0" Grid.ColumnSpan="2" x:Name="translateButon" Text="Configure!" Clicked="CalculateTip"/>
+            <Button Grid.Row="7" Grid.Column="0" Grid.ColumnSpan="2" x:Name="finalPercentage" Text="Tip Will Appear Here" IsEnabled="False"/>
         </Grid>
     </ContentPage.Content>
 </ContentPage>
