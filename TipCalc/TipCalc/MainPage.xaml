@@ -18,8 +18,8 @@
                 <RowDefinition Height="40"/>
                 <RowDefinition Height="40"/>
             </Grid.RowDefinitions>
-            <Label Grid.Column="0" Grid.ColumnSpan="2" Text="Tip Caluculator"/>
-            <Label Grid.Row="1" Grid.Column="0" Grid.ColumnSpan="2" Text="Easily Find Out What % Your Tables Are Tipping"/>
+            <Label Grid.Column="0" Grid.ColumnSpan="2" Text="Tip Caluculator" HorizontalOptions="Center"/>
+            <Label Grid.Row="1" Grid.Column="0" Grid.ColumnSpan="2" Text="Easily Find Out What % Your Tables Are Tipping" HorizontalOptions="CenterAndExpand"/>
             <Label Grid.Row="2" Text="How Much Was The Bill Before Tip?"/>
             <Entry Grid.Row="2" Grid.Column="1" x:Name="BillEntry" Text="100" />
             <Label Grid.Row="3" Text="How Much Did They Tip?"/>
