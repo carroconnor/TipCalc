@@ -5,16 +5,27 @@
              x:Class="TipCalc.MainPage">
 
     <ContentPage.Content>
-        <StackLayout>
-            <Label Text="Tip Caluculator"/>
-            <Label Text="Easily Find Out What % Your Tables Are Tipping"/>
-            <Label Text="How Much Was The Bill Before Tip?"/>
-            <Entry x:Name="BillEntry" Text="100" />  
-            <Label Text="How Much Did They Tip?"/>
-            <Entry x:Name="TipEntry" Text="15.00"/>
-            <Button x:Name="translateButon" Text="Configure!" Clicked="CalculateTip"/>
-            <Button x:Name="finalPercentage" Text="Tip Will Appear Here" IsEnabled="False"/>
-        </StackLayout>
+        <Grid>
+            <Grid.ColumnDefinitions>
+                <ColumnDefinition Width="100"/>
+                <ColumnDefinition Width="*"/>
+            </Grid.ColumnDefinitions>
+            <Grid.RowDefinitions>
+                <RowDefinition Height="40"/>
+                <RowDefinition Height="40"/>
+                <RowDefinition Height="40"/>
+                <RowDefinition Height="40"/>
+                <RowDefinition Height="40"/>
+                <RowDefinition Height="40"/>
+            </Grid.RowDefinitions>
+            <Label Grid.Column="0" Grid.ColumnSpan="2" Text="Tip Caluculator" HorizontalOptions="Center"/>
+            <Label Grid.Row="1" Grid.Column="0" Grid.ColumnSpan="2" Text="Easily Find Out What % Your Tables Are Tipping" HorizontalOptions="CenterAndExpand"/>
+            <Label Grid.Row="2" Text="How Much Was The Bill Before Tip?"/>
+            <Entry Grid.Row="2" Grid.Column="1" x:Name="BillEntry" Text="100" />
+            <Label Grid.Row="3" Text="How Much Did They Tip?"/>
+            <Entry Grid.Row="3" Grid.Column="1" x:Name="TipEntry" Text="15.00"/>
+            <Button Grid.Row="4" Grid.Column="0" Grid.ColumnSpan="2" x:Name="translateButon" Text="Configure!" Clicked="CalculateTip"/>
+            <Button Grid.Row="5" Grid.Column="0" Grid.ColumnSpan="2" x:Name="finalPercentage" Text="Tip Will Appear Here" IsEnabled="False"/>
+        </Grid>
     </ContentPage.Content>
-
 </ContentPage>
