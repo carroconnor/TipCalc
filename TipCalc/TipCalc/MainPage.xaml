@@ -6,29 +6,12 @@
              x:Class="TipCalc.MainPage">
 
     <ContentPage.Content>
-        <Grid>
-            <Grid.ColumnDefinitions>
-                <ColumnDefinition Width="100"/>
-                <ColumnDefinition Width="*"/>
-            </Grid.ColumnDefinitions>
-            <Grid.RowDefinitions>
-                <RowDefinition Height="45"/>
-                <RowDefinition Height="45"/>
-                <RowDefinition Height="45"/>
-                <RowDefinition Height="45"/> 
-                <RowDefinition Height="45"/>
-                <RowDefinition Height="80"/>
-                <RowDefinition Height="45"/>
-                <RowDefinition Height="80"/>
-            </Grid.RowDefinitions>
-            <Label Grid.Column="0" Grid.ColumnSpan="2" HorizontalOptions="Center" Font="Oswald" FontSize="Large" Text="Tip Caluculator" />
-            <Label Grid.Row="1" Grid.Column="0" Grid.ColumnSpan="2" Font="Oswald" FontSize="Medium" HorizontalOptions="Center" Text="Easily Find Out What % Your Tables Are Tipping" />
-            <Label Grid.Row="2" Font="Oswald" FontSize="Small" Text="What Was The Bill Before Tip?"/>
-            <Entry Grid.Row="2" Grid.Column="1" x:Name="BillEntry" Text="100" />
-            <Label Grid.Row="3" Font="Oswald" FontSize="Small" Text="What Did They Tip?"/>
-            <Entry Grid.Row="3" Grid.Column="1" x:Name="TipEntry" Text="15.00"/>
-            <Button Grid.Row="5" Grid.Column="0" Grid.ColumnSpan="2" x:Name="translateButon" Font="Oswald" FontSize="Micro" Text="Configure!" Clicked="CalculateTip"/>
-            <Button Grid.Row="7" Grid.Column="0" Grid.ColumnSpan="2" x:Name="finalPercentage" Font="Oswald" FontSize="Micro" Text="Tip Will Appear Here" IsEnabled="False"/>
-        </Grid>
+        <StackLayout>
+            <Label Text="Welcome to ServeEazy"
+                VerticalOptions="CenterAndExpand" 
+                HorizontalOptions="CenterAndExpand" />
+            <Button  x:Name="btnPercentage" Text="Configure Your Table's Tip %" Clicked="BtnPercentage_OnClicked" />
+            <Button  x:Name="ToHourlyWageButton" Text="Configure Your Hourly Wage" />
+        </StackLayout>
     </ContentPage.Content>
 </ContentPage>
