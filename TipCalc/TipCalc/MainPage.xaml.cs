@@ -1,5 +1,4 @@
-﻿using System;
-using Xamarin.Forms;
+﻿using Xamarin.Forms;
 
 namespace TipCalc
 {
@@ -11,12 +10,6 @@ namespace TipCalc
             InitializeComponent();
             vm = new MainPageViewModel();
             BindingContext = vm;
-        }
-
-        public async void BtnPercentage_OnClicked(object sender, EventArgs e)
-        {
-            await Navigation.PushAsync(new PercentagePage());
-            btnPercentage.IsEnabled = true;
         }
     }
 }

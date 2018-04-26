@@ -9,10 +9,17 @@
     <ContentPage.Content>
         <StackLayout>
             <Label Text="Welcome to ServeEazy"
+                Font="Oswald" FontSize="Large"
                 VerticalOptions="CenterAndExpand" 
                 HorizontalOptions="CenterAndExpand" />
-            <Button  x:Name="btnPercentage" Text="Configure Your Table's Tip %" Clicked="BtnPercentage_OnClicked" />
-            <Button  x:Name="ToHourlyWageButton" Text="Configure Your Hourly Wage" />
+            <Label Text="An Easy Way To Keep Track Of Today's Wages."
+                Font="Oswald"
+                VerticalOptions="CenterAndExpand" 
+                HorizontalOptions="CenterAndExpand" />
+            <Label Text="Switch Between The Different Tabs To Either Calculate What Percentage Tip Your Table Gave You.. Or To Figure How Much You Made Hourly During Your Shift."
+                Font="Oswald"
+                VerticalOptions="CenterAndExpand" 
+                HorizontalOptions="CenterAndExpand" />
         </StackLayout>
     </ContentPage.Content>
 </ContentPage>
