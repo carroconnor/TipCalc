@@ -12,12 +12,14 @@
                 Font="Oswald" FontSize="Large"
                 VerticalOptions="CenterAndExpand" 
                 HorizontalOptions="CenterAndExpand" />
-            <Label Text="An Easy Way To Keep Track Of Today's Wages."
+            <Label Text="Easily Keep Track Of Today's Wages."
                 Font="Oswald"
+                Margin="50"
                 VerticalOptions="CenterAndExpand" 
                 HorizontalOptions="CenterAndExpand" />
             <Label Text="Switch Between The Different Tabs To Either Calculate What Percentage Tip Your Table Gave You.. Or To Figure How Much You Made Hourly During Your Shift."
                 Font="Oswald"
+                Margin="50"
                 VerticalOptions="CenterAndExpand" 
                 HorizontalOptions="CenterAndExpand" />
         </StackLayout>
