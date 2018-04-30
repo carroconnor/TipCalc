@@ -47,7 +47,7 @@ namespace TipCalc
                         if (!float.IsNaN(HourlyWage))
                         {
                             finalHourlyWage.IsEnabled = true;
-                            finalHourlyWage.Text = "Today You Made $" + Math.Round(HourlyWage, 2) + "An Hour";
+                            finalHourlyWage.Text = "Today You Made $" + Math.Round(HourlyWage, 2) + " An Hour";
                         }
                     }
                 }
