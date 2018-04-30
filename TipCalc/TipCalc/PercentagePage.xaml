@@ -25,11 +25,11 @@
             <Label Grid.Column="0" Grid.ColumnSpan="2" HorizontalOptions="Center" Font="Oswald" FontSize="Large" Text="Tip Caluculator" />
             <Label Grid.Row="1" Grid.Column="0" Grid.ColumnSpan="2" Font="Oswald" FontSize="Medium" HorizontalOptions="Center" Text="Easily Find Out What % Your Tables Are Tipping" />
             <Label Grid.Row="2" Font="Oswald" FontSize="Small" Text="What Was The Bill Before Tip?"/>
-            <Entry Grid.Row="2" Grid.Column="1" x:Name="BillEntry" Text="100" />
+            <Entry Grid.Row="2" Grid.Column="1" Keyboard="Numeric" x:Name="BillEntry" Text="100" />
             <Label Grid.Row="3" Font="Oswald" FontSize="Small" Text="What Did They Tip?"/>
-            <Entry Grid.Row="3" Grid.Column="1" x:Name="TipEntry" Text="15.00"/>
+            <Entry Grid.Row="3" Grid.Column="1" Keyboard="Numeric" x:Name="TipEntry" Text="15.00"/>
             <Button Grid.Row="5" Grid.Column="0" Grid.ColumnSpan="2" x:Name="translateButon" Font="Oswald" FontSize="Micro" Text="Configure!" Clicked="CalculateTip"/>
-            <Button Grid.Row="7" Grid.Column="0" Grid.ColumnSpan="2" x:Name="finalPercentage" Font="Oswald" FontSize="Micro" Text="Tip Will Appear Here" IsEnabled="False"/>
+            <Label Grid.Row="7" Grid.ColumnSpan="2" x:Name="finalPercentage" Font="Oswald" FontSize="Micro" HorizontalOptions="Center"/>
         </Grid>
     </ContentPage.Content>
 </ContentPage>

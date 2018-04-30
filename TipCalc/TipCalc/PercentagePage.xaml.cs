@@ -45,7 +45,6 @@ namespace TipCalc
 
                         if (!float.IsNaN(tipPercentage))
                         {
-                            finalPercentage.IsEnabled = true;
                             finalPercentage.Text = "Your Table Tipped You %" + Math.Round(tipPercentage, 4);
                         }
                     }

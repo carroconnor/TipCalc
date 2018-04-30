@@ -22,15 +22,15 @@ namespace TipCalc
 
             Regex inputValidation = new Regex(@"^\d+(\.\d{1,2})?$");
 
-            var TestMoneyMadeDecimalPlace = inputValidation.IsMatch(BillEntry.Text);
-            var TestHoursDecimalPlace = inputValidation.IsMatch(TipEntry.Text);
+            var testMoneyMadeDecimalPlace = inputValidation.IsMatch(BillEntry.Text);
+            var testHoursDecimalPlace = inputValidation.IsMatch(TipEntry.Text);
 
-            if (TestMoneyMadeDecimalPlace && TestHoursDecimalPlace == true)
+            if (testMoneyMadeDecimalPlace && testHoursDecimalPlace == true)
             {
-                var MoneyMadeIsNumber = float.TryParse(BillEntry.Text, out _);
-                var HoursIsNumber = float.TryParse(TipEntry.Text, out _);
+                var moneyMadeIsNumber = float.TryParse(BillEntry.Text, out _);
+                var hoursIsNumber = float.TryParse(TipEntry.Text, out _);
 
-                if (MoneyMadeIsNumber && HoursIsNumber)
+                if (moneyMadeIsNumber && hoursIsNumber)
                 {
                     var MoneyMadeValue = float.Parse(BillEntry.Text);
                     var HourValue = float.Parse(TipEntry.Text);
@@ -39,19 +39,16 @@ namespace TipCalc
                     {
                         finalHourlyWage.Text = "Please Enter In A Positive Number";
                     }
-
                     else
                     {
-                        var HourlyWage = model.WageCalculate(MoneyMadeValue, HourValue);
+                        var hourlyWage = model.WageCalculate(MoneyMadeValue, HourValue);
 
-                        if (!float.IsNaN(HourlyWage))
+                        if (!float.IsNaN(hourlyWage))
                         {
-                            finalHourlyWage.IsEnabled = true;
-                            finalHourlyWage.Text = "Today You Made $" + Math.Round(HourlyWage, 2) + " An Hour";
+                            finalHourlyWage.Text = "Today You Made $" + Math.Round(hourlyWage, 2) + " An Hour";
                         }
                     }
                 }
-
                 else
                 {
                     finalHourlyWage.Text = "Enter in a number";
