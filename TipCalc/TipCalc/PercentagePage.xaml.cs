@@ -9,12 +9,12 @@ namespace TipCalc
     [XamlCompilation(XamlCompilationOptions.Compile)]
     public partial class PercentagePage : ContentPage
     {
-        PercentagePageViewModel vm;
+        PercentagePageViewModel model;
         public PercentagePage()
         {
             InitializeComponent();
-            vm = new PercentagePageViewModel();
-            BindingContext = vm;
+            model = new PercentagePageViewModel();
+            BindingContext = model;
         }
 
         public void CalculateTip(object sender, EventArgs e)
@@ -22,45 +22,42 @@ namespace TipCalc
 
             Regex inputValidation = new Regex(@"^\d+(\.\d{1,2})?$");
 
-            var TestBillDecimalPlace = inputValidation.IsMatch(BillEntry.Text);
-            var TestTipDecimalPlace = inputValidation.IsMatch(TipEntry.Text);
+            var testBillDecimalPlace = inputValidation.IsMatch(BillEntry.Text);
+            var testTipDecimalPlace = inputValidation.IsMatch(TipEntry.Text);
 
-            if (TestBillDecimalPlace && TestTipDecimalPlace == true)
+            if (testBillDecimalPlace && testTipDecimalPlace == true)
             {
-                var BillIsNumber = float.TryParse(BillEntry.Text, out _);
-                var TipIsNumber = float.TryParse(TipEntry.Text, out _);
+                var billIsNumber = float.TryParse(BillEntry.Text, out _);
+                var tipIsNumber = float.TryParse(TipEntry.Text, out _);
 
-                if (BillIsNumber && TipIsNumber)
+                if (billIsNumber && tipIsNumber)
                 {
-                    var BillValue = float.Parse(BillEntry.Text);
-                    var TipValue = float.Parse(TipEntry.Text);
+                    var billValue = float.Parse(BillEntry.Text);
+                    var tipValue = float.Parse(TipEntry.Text);
 
-                    if (BillValue < 0 || TipValue < 0)
+                    if (billValue < 0 || tipValue < 0)
                     {
                         finalPercentage.Text = "Please Enter In A Positive Number";
                     }
-
                     else
                     {
-                        var TipPercentage = vm.TipCalculate(BillValue, TipValue);
+                        var tipPercentage = model.TipCalculate(billValue, tipValue);
 
-                        if (!float.IsNaN(TipPercentage))
+                        if (!float.IsNaN(tipPercentage))
                         {
                             finalPercentage.IsEnabled = true;
-                            finalPercentage.Text = "Your Table Tipped You %" + Math.Round(TipPercentage, 4);
+                            finalPercentage.Text = "Your Table Tipped You %" + Math.Round(tipPercentage, 4);
                         }
                     }
                 }
-
                 else
                 {
-                    finalPercentage.Text = "Enter in a number";
+                    finalPercentage.Text = "Enter a number";
                 }
             }
-
             else
             {
-                finalPercentage.Text = "That doesn't look like a valid money value.";
+                finalPercentage.Text = "That doesn't look like a valid amount.";
             }
         }
     }

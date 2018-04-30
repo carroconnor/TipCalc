@@ -4,12 +4,12 @@ namespace TipCalc
 {
     public partial class MainPage : ContentPage
     {
-        MainPageViewModel vm;
+        MainPageViewModel model;
         public MainPage()
         {
             InitializeComponent();
-            vm = new MainPageViewModel();
-            BindingContext = vm;
+            model = new MainPageViewModel();
+            BindingContext = model;
         }
     }
 }

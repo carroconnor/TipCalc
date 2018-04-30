@@ -9,12 +9,12 @@ namespace TipCalc
     [XamlCompilation(XamlCompilationOptions.Compile)]
     public partial class HourlyWagePage : ContentPage
     {
-        HourlyWagePageViewModel vm;
+        HourlyWagePageViewModel model;
         public HourlyWagePage()
         {
             InitializeComponent();
-            vm = new HourlyWagePageViewModel();
-            BindingContext = vm;
+            model = new HourlyWagePageViewModel();
+            BindingContext = model;
         }
 
         public void CalculateHourlyWage(object sender, EventArgs e)
@@ -42,7 +42,7 @@ namespace TipCalc
 
                     else
                     {
-                        var HourlyWage = vm.WageCalculate(MoneyMadeValue, HourValue);
+                        var HourlyWage = model.WageCalculate(MoneyMadeValue, HourValue);
 
                         if (!float.IsNaN(HourlyWage))
                         {
