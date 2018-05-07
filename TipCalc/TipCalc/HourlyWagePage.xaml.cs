@@ -15,35 +15,35 @@ namespace TipCalc
             InitializeComponent();
             model = new HourlyWagePageViewModel();
             BindingContext = model;
-            BillEntry.TextChanged += BillEntry_TextChanged;
-            TipEntry.TextChanged += TipEntry_TextChanged;
+            BillEntry.TextChanged += ProfitEntry_TextChanged;
+            TipEntry.TextChanged += HourEntry_TextChanged;
         }
 
-        string previousBillInput = "";
-        string previousTipInput = "";
+        string previousProfitInput;
+        string previousHourInput;
 
-        protected void BillEntry_TextChanged(object sender, TextChangedEventArgs e)
+        protected void ProfitEntry_TextChanged(object sender, TextChangedEventArgs e)
         {
             Regex reg = new Regex(@"^\$?([1-9]{1}[0-9]{0,2}(\,[0-9]{3})*(\.[0-9]{0,2})?|[1-9]{1}[0-9]{0,}(\.[0-9]{0,2})?|(\.[0-9]{0,2})?|(\.[0-9]{1,2})?)$");
-            Match matchBill = reg.Match(BillEntry.Text);
-            if (matchBill.Success)
+            Match matchProfit = reg.Match(BillEntry.Text);
+            if (matchProfit.Success)
             {
-                previousBillInput = BillEntry.Text;
+                previousProfitInput = BillEntry.Text;
             }
             else
             {
-                BillEntry.Text = previousBillInput;
+                BillEntry.Text = e.OldTextValue;
             }
         }
 
-        protected void TipEntry_TextChanged(object sender, TextChangedEventArgs e)
+        protected void HourEntry_TextChanged(object sender, TextChangedEventArgs e)
         {
             Regex reg = new Regex(@"^\$?([1-9]{1}[0-9]{0,2}(\,[0-9]{3})*(\.[0-9]{0,2})?|[1-9]{1}[0-9]{0,}(\.[0-9]{0,2})?|(\.[0-9]{0,2})?|(\.[0-9]{1,2})?)$");
 
-            Match matchTip = reg.Match(TipEntry.Text);
-            if (matchTip.Success)
+            Match matchHour = reg.Match(TipEntry.Text);
+            if (matchHour.Success)
             {
-                previousTipInput = TipEntry.Text;
+                previousHourInput = TipEntry.Text;
             }
             else
             {

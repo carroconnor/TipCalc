@@ -23,9 +23,9 @@
             <Label Grid.Column="0" Grid.ColumnSpan="2" HorizontalOptions="Center" Font="Oswald" FontSize="Large" Text="Wage Caluculator" />
             <Label Grid.Row="1" Grid.Column="0" Grid.ColumnSpan="2" Font="Oswald" FontSize="Medium" HorizontalOptions="Center" Text="Easily Find Out Today's Hourly Wage" />
             <Label Grid.Row="2" Font="Oswald" FontSize="Small" Text="How Much Did You Make Today?"/>
-            <Entry Grid.Row="2" Grid.Column="1" x:Name="BillEntry" Text="100" />
+            <Entry Grid.Row="2" Grid.Column="1" x:Name="BillEntry" Keyboard="Numeric" Text="100" />
             <Label Grid.Row="3" Font="Oswald" FontSize="Small" Text="How Long Did You Work?"/>
-            <Entry Grid.Row="3" Grid.Column="1" x:Name="TipEntry" Text="15.00"/>
+            <Entry Grid.Row="3" Grid.Column="1" x:Name="TipEntry" Keyboard="Numeric" Text="15.00"/>
             <Button Grid.Row="5" Grid.Column="0" Grid.ColumnSpan="2" x:Name="translateButon" Font="Oswald" FontSize="Micro" Text="Configure!" Clicked="CalculateHourlyWage"/>
             <Label Grid.Row="7" Grid.ColumnSpan="2" x:Name="finalHourlyWage" Font="Oswald" FontSize="Micro" HorizontalOptions="Center"/>
         </Grid>

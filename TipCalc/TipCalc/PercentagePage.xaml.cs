@@ -19,8 +19,8 @@ namespace TipCalc
             TipEntry.TextChanged += TipEntry_TextChanged;
         }
 
-        string previousBillInput = "";
-        string previousTipInput = "";
+        string previousBillInput;
+        string previousTipInput;
 
         protected void BillEntry_TextChanged(object sender, TextChangedEventArgs e)
         {
@@ -32,7 +32,7 @@ namespace TipCalc
             }
             else
             {
-                BillEntry.Text = previousBillInput;
+                BillEntry.Text = e.OldTextValue;
             }
         }
 
