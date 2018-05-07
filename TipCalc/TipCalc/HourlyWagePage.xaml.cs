@@ -15,6 +15,40 @@ namespace TipCalc
             InitializeComponent();
             model = new HourlyWagePageViewModel();
             BindingContext = model;
+            BillEntry.TextChanged += BillEntry_TextChanged;
+            TipEntry.TextChanged += TipEntry_TextChanged;
+        }
+
+        string previousBillInput = "";
+        string previousTipInput = "";
+
+        protected void BillEntry_TextChanged(object sender, TextChangedEventArgs e)
+        {
+            Regex reg = new Regex(@"^\$?([1-9]{1}[0-9]{0,2}(\,[0-9]{3})*(\.[0-9]{0,2})?|[1-9]{1}[0-9]{0,}(\.[0-9]{0,2})?|(\.[0-9]{0,2})?|(\.[0-9]{1,2})?)$");
+            Match matchBill = reg.Match(BillEntry.Text);
+            if (matchBill.Success)
+            {
+                previousBillInput = BillEntry.Text;
+            }
+            else
+            {
+                BillEntry.Text = previousBillInput;
+            }
+        }
+
+        protected void TipEntry_TextChanged(object sender, TextChangedEventArgs e)
+        {
+            Regex reg = new Regex(@"^\$?([1-9]{1}[0-9]{0,2}(\,[0-9]{3})*(\.[0-9]{0,2})?|[1-9]{1}[0-9]{0,}(\.[0-9]{0,2})?|(\.[0-9]{0,2})?|(\.[0-9]{1,2})?)$");
+
+            Match matchTip = reg.Match(TipEntry.Text);
+            if (matchTip.Success)
+            {
+                previousTipInput = TipEntry.Text;
+            }
+            else
+            {
+                TipEntry.Text = e.OldTextValue;
+            }
         }
 
         public void CalculateHourlyWage(object sender, EventArgs e)
@@ -54,7 +88,6 @@ namespace TipCalc
                     finalHourlyWage.Text = "Enter in a number";
                 }
             }
-
             else
             {
                 finalHourlyWage.Text = "That doesn't look like a valid value.";
