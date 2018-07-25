@@ -2,7 +2,7 @@
 <ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
              xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
              xmlns:local="clr-namespace:TipCalc"
-             BackgroundColor="BlueViolet"
+             BackgroundColor="DeepSkyBlue"
              x:Class="TipCalc.PercentagePage"
              Title="Find Percentage">
 
@@ -29,7 +29,7 @@
             <Label Grid.Row="3" Font="Oswald" FontSize="Small" Text="What Did They Tip?"/>
             <Entry Grid.Row="3" Grid.Column="1" Keyboard="Numeric" x:Name="TipEntry" Text="15.00"/>
             <Button Grid.Row="5" Grid.Column="0" Grid.ColumnSpan="2" x:Name="translateButon" Font="Oswald" FontSize="Micro" Text="Configure!" Clicked="CalculateTip"/>
-            <Label Grid.Row="7" Grid.ColumnSpan="2" x:Name="finalPercentage" Font="Oswald" FontSize="Micro" HorizontalOptions="Center"/>
+            <Label Grid.Row="7" Grid.ColumnSpan="2" x:Name="finalPercentage" Font="Oswald" FontSize="Large" HorizontalOptions="Center"/>
         </Grid>
     </ContentPage.Content>
 </ContentPage>
